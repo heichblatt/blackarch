@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# build.sh -
+# build.sh - entrypoint for blackarch-builder, configures blackarch baseimages
 
 # Adapted from
 # https://github.com/docker/docker/commit/4137a0ea327ea1775c1b57892fd684da2c738f3e
