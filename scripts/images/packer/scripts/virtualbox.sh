@@ -78,7 +78,8 @@ cat <<-EOF > "${TARGET_DIR}${CONFIG_SCRIPT}"
 	/usr/bin/systemctl enable sshd.service
 
 	# VirtualBox Guest Additions
-  /usr/bin/pacman -S --noconfirm virtualbox-guest-modules-arch
+	/usr/bin/pacman -S --noconfirm virtualbox-guest-modules-arch
+        /usr/bin/pacman -S --noconfirm virtualbox-guest-utils-nox
 
   # Vagrant-specific configuration
 	/usr/bin/groupadd vagrant

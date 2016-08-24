@@ -64,3 +64,5 @@ scripts/images/docker/output
 scripts/images/packer/packer_cache
 scripts/images/packer/output*
 scripts/images/packer/.vagrant
+scripts/images/packer/testing
+

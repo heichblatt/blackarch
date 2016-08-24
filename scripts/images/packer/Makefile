@@ -14,9 +14,9 @@ build: $(BUILD_DIR)/$(BOX_FILENAME)
 
 clean:
 	rm -rf $(BUILD_DIR)
-	-cd $(TEST_DIR)        && \
+	( cd $(TEST_DIR)        && \
 	    vagrant destroy -f && \
-	    cd ..
+	    cd .. ) || true
 	rm -rf $(TEST_DIR)
 	rm -f *.{hwm,pwd,pwi}
 
@@ -33,9 +33,9 @@ test:
 	vagrant box add --force $(BOX_NAME) $(BUILD_DIR)/$(BOX_FILENAME) && \
 	  mkdir -pv $(TEST_DIR) && \
 	  cd $(TEST_DIR) && \
-	  -vagrant destroy -f && \
-	  -rm ./Vagrantfile && \
+	  ( vagrant destroy -f || true ) && \
+	  ( rm ./Vagrantfile || true ) && \
 	  vagrant init --minimal $(BOX_NAME) && \
 	  vagrant up && \
-	  vagrant ssh -c uname -a && \
+	  vagrant ssh -c "uname -a" && \
 	  vagrant destroy -f
