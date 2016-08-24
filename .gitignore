@@ -18,7 +18,7 @@ trunk/
 tags
 
 .MTREE
-.PKGINFO 
+.PKGINFO
 
 *.part
 *.7z
@@ -59,4 +59,8 @@ tags
 !/scripts/arm-qemu/armv7/init.sh
 !/scripts/arm-qemu/armv7/run.sh
 /tmp/
+
 scripts/images/docker/output
+scripts/images/packer/packer_cache
+scripts/images/packer/output*
+scripts/images/packer/.vagrant
